@@ -24,3 +24,14 @@ A secure image-based verification system that leverages blockchain technology an
 | QRCode, hashlib   | Python libraries for QR and hashing          |
 | HTML/CSS/JS       | Frontend templates and forms                 |
 
+NOTE:-Create folders for HTML file and store them in that folder by the name template
+
+NOTE(2):- Put the deploy.js file in the folder named Scripts
+
+NOTE(3):- Put the Solidity file in a folder named Contracts
+
+NOTE(4):- Use ganache as the local Ethereum test blockchain
+
+NOTE(5):- Create two empty folders Named "qrcodes" and "uploads" put those folder in a parent folder named "static"
+
+NOTE(6):- create a virtual environment in python before running the flask script
