@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate QR</title>
+</head>
+<body>
+
+    <!-- 🔗 Navigation Menu -->
+    <nav style="padding: 10px; background-color: #f0f0f0;">
+        <a href="{{ url_for('generate') }}">🔄 Generate QR</a> |
+        <a href="{{ url_for('validate') }}">✅ Validate QR</a>
+    </nav>
+    <hr>
+
+    <h1>Upload Medicine Image to Generate QR</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="submit" value="Upload and Generate QR">
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+</body>
+</html>

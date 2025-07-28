@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicine Verification System</title>
+</head>
+<body>
+    <h1>🏠 Welcome to the Medicine Verification System</h1>
+    <ul>
+        <li><a href="{{ url_for('generate') }}">🧪 Generate QR Code</a></li>
+        <li><a href="{{ url_for('validate') }}">🔍 Validate QR Code</a></li>
+    </ul>
+
+    {% if qr_code %}
+        <h2>🔗 Generated QR Code:</h2>
+        <img src="{{ url_for('static', filename='qrcodes/' + qr_code) }}" alt="QR Code">
+    {% endif %}
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
