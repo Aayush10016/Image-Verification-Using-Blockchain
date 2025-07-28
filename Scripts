@@ -1,0 +1,20 @@
+const hre = require("hardhat");
+
+async function main() {
+    // Get the contract factory
+    const MedicineVerifier = await hre.ethers.getContractFactory("MedicineVerifier");
+
+    // Deploy the contract
+    const medicineVerifier = await MedicineVerifier.deploy();
+
+    // Wait for deployment to complete
+    await medicineVerifier.waitForDeployment();
+
+    // Print contract address
+    console.log("✅ Contract deployed to:", medicineVerifier.target);
+}
+
+main().catch((error) => {
+    console.error("❌ Deployment failed:", error);
+    process.exitCode = 1;
+});
